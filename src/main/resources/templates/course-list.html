@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses - Smart LMS</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">📚 Smart LMS</div>
+            <div class="nav-links">
+                <a th:href="@{/dashboard}">Dashboard</a>
+                <a th:href="@{/courses}" class="active">Courses</a>
+                <a th:href="@{/quiz}">Quiz</a>
+                <a th:href="@{/profile}">Profile</a>
+                <a th:href="@{/}">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero" style="padding: 50px 20px;">
+        <h1>📖 My Courses</h1>
+        <p>Continue your learning journey with these courses</p>
+    </div>
+
+    <div class="main-content">
+        <div class="grid" th:if="${courses}">
+            <div class="course-card" th:each="course : ${courses}">
+                <h3 th:text="${course.name}">Course Name</h3>
+                <p><strong>Instructor:</strong> <span th:text="${course.instructor}">Instructor Name</span></p>
+                <p><strong>Course ID:</strong> <span th:text="${course.id}">ID</span></p>
+                <button class="btn">Open Course</button>
+            </div>
+        </div>
+        
+        <div class="card" th:unless="${courses}" style="text-align: center; margin: 40px auto;">
+            <h3>📚 No Courses Available</h3>
+            <p>Courses will appear here once they are loaded.</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a th:href="@{/dashboard}" class="back-link">← Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

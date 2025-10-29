@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart LMS - Login</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="logo">
+                <h1>📚 Smart LMS</h1>
+                <p>Welcome back! Sign in to continue learning</p>
+            </div>
+            
+            <div th:if="${error}" style="color: #dc2626; margin-bottom: 20px; text-align: center; font-size: 14px;">
+                <span th:text="${error}">Error message</span>
+            </div>
+            
+            <form th:action="@{/login}" method="post">
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Enter any username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Enter any password" required>
+                </div>
+                <button type="submit" class="btn">Sign In</button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 20px; font-size: 12px; color: #6b7280;">
+                <p>💡 Tip: Enter any username and password to login</p>
+            </div>
+            
+            <a th:href="@{/}" class="back-link">← Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

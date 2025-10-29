@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Smart LMS</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">📚 Smart LMS</div>
+            <div class="nav-links">
+                <a th:href="@{/dashboard}">Dashboard</a>
+                <a th:href="@{/courses}">Courses</a>
+                <a th:href="@{/quiz}">Quiz</a>
+                <a th:href="@{/profile}" class="active">Profile</a>
+                <a th:href="@{/}">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero" style="padding: 50px 20px;">
+        <h1>👤 My Profile</h1>
+        <p>Track your learning progress and achievements</p>
+    </div>
+
+    <div class="main-content">
+        <div class="grid">
+            <div class="course-card">
+                <h3>📊 Learning Statistics</h3>
+                <div class="stats" style="color: #4f46e5; margin: 20px 0;">
+                    <div class="stat-item">
+                        <span class="stat-number" style="font-size: 1.8rem;">15</span>
+                        <span class="stat-label">Courses Enrolled</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" style="font-size: 1.8rem;">12</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" style="font-size: 1.8rem;">88%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="course-card">
+                <h3>🏆 Recent Achievements</h3>
+                <div style="text-align: left; line-height: 1.8;">
+                    <p>🥇 Completed "Java Programming Fundamentals"</p>
+                    <p>🎯 Scored 95% in "Web Development Quiz"</p>
+                    <p>⭐ Earned "Quick Learner" badge</p>
+                    <p>📚 Finished 3 courses this month</p>
+                </div>
+            </div>
+            
+            <div class="course-card">
+                <h3>📈 Progress Overview</h3>
+                <div style="text-align: left;">
+                    <div style="margin-bottom: 20px;">
+                        <p><strong>Current Course:</strong> Database Design and SQL</p>
+                        <div style="background: #e5e7eb; border-radius: 8px; height: 8px; margin-top: 8px;">
+                            <div style="background: #4f46e5; height: 100%; width: 75%; border-radius: 8px;"></div>
+                        </div>
+                        <small style="color: #6b7280;">75% Complete</small>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <p><strong>Next Quiz:</strong> SQL Fundamentals</p>
+                        <div style="background: #e5e7eb; border-radius: 8px; height: 8px; margin-top: 8px;">
+                            <div style="background: #10b981; height: 100%; width: 30%; border-radius: 8px;"></div>
+                        </div>
+                        <small style="color: #6b7280;">Ready to start</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a th:href="@{/dashboard}" class="back-link">← Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

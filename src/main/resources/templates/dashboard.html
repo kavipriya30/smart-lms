@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Smart LMS</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">📚 Smart LMS</div>
+            <div class="nav-links">
+                <a th:href="@{/dashboard}" class="active">Dashboard</a>
+                <a th:href="@{/courses}">Courses</a>
+                <a th:href="@{/quiz}">Quiz</a>
+                <a th:href="@{/profile}">Profile</a>
+                <a th:href="@{/}">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero" style="padding: 50px 20px;">
+        <h1>Welcome back, Admin User! 🚀</h1>
+        <p>Ready to continue your learning journey?</p>
+    </div>
+
+    <div class="main-content">
+        <div class="grid">
+            <div class="course-card">
+                <h3>📖 My Courses</h3>
+                <p>Access your enrolled courses and continue learning at your own pace.</p>
+                <a th:href="@{/courses}">
+                    <button class="btn">View Courses</button>
+                </a>
+            </div>
+            
+            <div class="course-card">
+                <h3>🧠 Take Quiz</h3>
+                <p>Test your knowledge with interactive quizzes and get instant feedback.</p>
+                <a th:href="@{/quiz}">
+                    <button class="btn">Start Quiz</button>
+                </a>
+            </div>
+            
+            <div class="course-card">
+                <h3>📊 My Profile</h3>
+                <p>View your learning progress, achievements, and personal statistics.</p>
+                <a th:href="@{/profile}">
+                    <button class="btn">View Profile</button>
+                </a>
+            </div>
+        </div>
+        
+        <div class="stats" style="color: #4f46e5; margin-top: 50px;">
+            <div class="stat-item">
+                <span class="stat-number">12</span>
+                <span class="stat-label">Courses Completed</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">85%</span>
+                <span class="stat-label">Average Score</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24h</span>
+                <span class="stat-label">Study Time</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Smart LMS</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">📚 Smart LMS</div>
+            <div class="nav-links">
+                <a th:href="@{/dashboard}">Dashboard</a>
+                <a th:href="@{/courses}">Courses</a>
+                <a th:href="@{/quiz}" class="active">Quiz</a>
+                <a th:href="@{/profile}">Profile</a>
+                <a th:href="@{/}">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero" style="padding: 50px 20px;">
+        <h1>🧠 Quiz Time!</h1>
+        <p>Test your knowledge and track your progress</p>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="card" style="max-width: 700px;">
+                <form th:action="@{/quiz}" method="post" th:if="${questions}">
+                    <div class="quiz-question" th:each="question, stat : ${questions}">
+                        <h3 th:text="'Question ' + ${stat.count}">Question 1</h3>
+                        <p th:text="${question.text}">Question text</p>
+                        
+                        <div th:each="option : ${question.options}">
+                            <div class="quiz-option">
+                                <input type="radio" th:name="'question_' + ${stat.index}" th:value="${option}">
+                                <span th:text="${option}">Option text</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="submit" class="btn">Submit Quiz ✓</button>
+                    </div>
+                </form>
+                
+                <div th:unless="${questions}" style="text-align: center;">
+                    <h3>📋 Sample Quiz</h3>
+                    <div class="quiz-question">
+                        <h3>Question 1</h3>
+                        <p>What is the main purpose of a Learning Management System?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="a">
+                            <span>To manage online learning content and track progress</span>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="b">
+                            <span>To create video games</span>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="c">
+                            <span>To manage social media</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <h3>Question 2</h3>
+                        <p>Which feature is most important in an LMS?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="a">
+                            <span>Progress tracking</span>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="b">
+                            <span>Gaming features</span>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="c">
+                            <span>Social networking</span>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button class="btn">Submit Quiz ✓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <a th:href="@{/dashboard}" class="back-link">← Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

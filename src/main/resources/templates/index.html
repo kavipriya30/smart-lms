@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart LMS - Home</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">📚 Smart LMS</div>
+            <div class="nav-links">
+                <a th:href="@{/}" class="active">Home</a>
+                <a th:href="@{/login}">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Smart Learning Management System</h1>
+        <p>Learn, grow, and succeed with our modern learning platform</p>
+        <a th:href="@{/login}">
+            <button class="btn">Get Started →</button>
+        </a>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Students</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Courses</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">95%</span>
+                <span class="stat-label">Success Rate</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="grid">
+            <div class="course-card">
+                <h3>📖 Interactive Learning</h3>
+                <p>Engage with dynamic content and interactive materials designed for effective learning.</p>
+            </div>
+            <div class="course-card">
+                <h3>📊 Progress Tracking</h3>
+                <p>Monitor your learning journey with detailed analytics and progress reports.</p>
+            </div>
+            <div class="course-card">
+                <h3>🎯 Smart Assessments</h3>
+                <p>Take quizzes and assessments that provide instant feedback and results.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
